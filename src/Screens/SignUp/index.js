@@ -11,6 +11,10 @@ const SignUp = () => {
     const { signUp } = useAuth();
     const navigate = useNavigate();
 
+    const handleiniti = () => {
+        navigate('/SignIn');
+    }
+
     const handleSignUp = async (e) => {
         e.preventDefault(); // Previne o comportamento padrão do formulário
 
@@ -83,7 +87,7 @@ const SignUp = () => {
                 <button type="submit" className='btnentrar'>Cadastrar</button>
                 </div>
                 <div className='divvoltar'>
-                <button type="submit" className='btnvoltar'>Início</button>
+                <button className='btnvoltar' onClick={handleiniti}>Início</button>
                 </div>
             </form>
             <p>
