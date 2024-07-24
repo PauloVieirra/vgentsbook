@@ -98,7 +98,7 @@ export const AuthProvider = ({ children }) => {
         const { user, error } = await supabase.auth.signUp({
             email,
             password,
-            // O envio de verificação de e-mail pode ser configurado aqui
+            sendEmailVerification: false// O envio de verificação de e-mail pode ser configurado aqui
         });
 
         if (error) {
