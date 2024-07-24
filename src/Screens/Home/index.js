@@ -25,7 +25,7 @@ const ReaderView = () => {
                     <button onClick={handleLogout} className="btn-logout">Sair</button>
                 </div>
                <div className='contmenurigth'>
-                  {user?.email === "mariliateixeirapsi@gmail.com" && (
+                  {user?.email === "mariliateixeirapsi@vgents.com" && (
                         <button onClick={handleNavigateToSignUp} className="btn-signup">Cadastro</button>
                     )}
                </div>
