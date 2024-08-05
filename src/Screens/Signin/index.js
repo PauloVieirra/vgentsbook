@@ -42,7 +42,7 @@ const SignIn = () => {
     return (
         <div className="container">
             <div className='diclogomarca'>
-                <img src="/books/logomarilia.png" alt="Logo" className='logo' /> {/* Ajuste o caminho da imagem conforme necessário */}
+                <img src="/books/logomarilia.png" alt="Logo" className='logo' /> 
             </div> 
             <div className="signin-container">
                 <h1>Login</h1>
