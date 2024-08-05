@@ -26,12 +26,13 @@
 }
 
 .diclogomarca{
-    display: flex;
+    display: none;
     position: relative;
     top: 80px
 }
 
 .logo{
+    display: none;
     width: 80px;
 }
 
