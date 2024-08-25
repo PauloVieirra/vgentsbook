@@ -1,0 +1,69 @@
+/* Estilos gerais que se aplicam a ambos os layouts */
+footer {
+    text-align: center;
+    padding: 15px;
+    font-family: Arial, sans-serif;
+  }
+  
+  a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Estilos específicos para telas maiores (web) */
+  @media (min-width: 491px) {
+    footer {
+      background-color: #282c34;
+      color: white;
+      padding: 20px;
+    }
+  
+    h3 {
+      margin: 0;
+      font-size: 1.5em;
+    }
+  
+    p {
+      margin: 5px 0;
+    }
+  
+    a {
+      color: lightblue;
+    }
+    
+    p a {
+      margin-right: 10px;
+    }
+  }
+  
+  /* Estilos específicos para telas menores (mobile) */
+  @media (max-width: 490px) {
+    footer {
+      background-color: #f1f1f1;
+      color: #333;
+      padding: 15px;
+      font-size: 14px;
+    }
+  
+    h4 {
+      margin: 0;
+      font-size: 1.2em;
+    }
+  
+    p {
+      margin: 4px 0;
+    }
+  
+    a {
+      color: #007bff;
+    }
+  
+    p a {
+      margin-right: 8px;
+    }
+  }
+  

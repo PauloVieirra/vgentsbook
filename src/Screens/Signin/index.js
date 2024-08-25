@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext'; // Ajuste o caminho conforme sua estrutura de pastas
 import './style.css'; // Importando o arquivo de estilos
+import { WebFooter } from '../../Components/Footer';
 
 const SignIn = () => {
     const [email, setEmail] = useState('');
@@ -40,10 +41,11 @@ const SignIn = () => {
     };
 
     return (
-        <div className="container">
+        <div className="container2">
+           
             <div className='diclogomarca'>
                 <img src="/books/logomarilia.png" alt="Logo" className='logo' /> 
-            </div> 
+           
             <div className="signin-container">
                 <h1>Login</h1>
                 <form onSubmit={handleSubmit}>
@@ -80,6 +82,7 @@ const SignIn = () => {
                   
                 </p>
             </div>
+            </div> 
         </div>
     );
 };
