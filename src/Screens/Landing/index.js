@@ -1,10 +1,16 @@
-import React from "react";
+import React,{useState} from "react";
 import { useNavigate } from "react-router-dom";
+import InscricaoModal from "../../Components/Modals/Inscricao";
 import "./style.css";
 
 
 
 const LandingPage = () => {
+
+  const [isModalOpen, setModalOpen] = useState(false);
+
+  const openModal = () => setModalOpen(true);
+  const closeModal = () => setModalOpen(false);
 
 const navigate = useNavigate();
 
@@ -23,7 +29,7 @@ const handleSignIn = () => {
           
           />
         </b>
-       
+        
         <div className="buttons-group">
           <div className="button">
             <img
@@ -42,6 +48,7 @@ const handleSignIn = () => {
             <div className="badge5">
               <div className="button-text">9</div>
             </div>
+            
           </div>
           <div className="button1">
             <img
@@ -259,10 +266,11 @@ const handleSignIn = () => {
           <div className="section-text">
             <div className="top">
               <b className="caption">Caption</b>
-              <div className="main-headline">Uma vida melhor pede pessoas melhores.</div>
+              <div className="main-headline">Workshop
+              Habilidades com IA: Equilibre sua Vida e Aumente a sua Produtividade com Chatbots de IA.</div>
               <div className="secondary-headline">Headline Two</div>
             </div>
-            <div className="paragraph">{`Nossas oficinas formativas, foram. `}</div>
+            <div className="paragraph">{`Participar das Oficinas de EmocionalizAÇÃO do Amor Próprio é uma grande oportunidade para você dar uma virada de chave na sua vida, contando com o apoio de outras pessoas, com o mesmo propósito que você e uma profissional altamente qualificada!`}</div>
             <div className="buttons-group1">
               <div className="button1">
                 <img
@@ -315,19 +323,7 @@ const handleSignIn = () => {
             </div>
           </div>
           <div className="buttons-group2">
-            <div className="field">
-              <img
-                className="icon-jam-icons-outline-l2"
-                alt=""
-                src="/icon--jamicons--outline--logos--envelope.svg"
-              />
-              <div className="companyname-202x">Nossas novidades </div>
-              <img
-                className="icon-jam-icons-outline-l"
-                alt=""
-                src="/icon--jamicons--outline--logos--chevrondown1.svg"
-              />
-            </div>
+           
             <div className="button1">
               <img
                 className="icon-jam-icons-outline-l"
@@ -335,7 +331,8 @@ const handleSignIn = () => {
                 src="/icon--jamicons--outline--logos--plus1.svg"
               />
               <div className="text-container6">
-                <div className="menu-item1">Se inscreva</div>
+                <div className="menu-item1" onClick={openModal}>Se inscreva</div>
+               
               </div>
               <img
                 className="icon-jam-icons-outline-l2"
@@ -623,11 +620,11 @@ const handleSignIn = () => {
           <div className="top">
             <b className="caption">Caption</b>
             <div className="main-headline1">Headline One</div>
-            <div className="secondary-headline1">Conheca nosso trabalho</div>
+            <div className="secondary-headline1">Bônus para os participantes das oficinas de EmocionalizAÇÃO do Amor Próprio.</div>
           </div>
           <div className="paragraph">
-          O método de atendimento psicológico que apresentamos é especialmente voltado para melhorar as áreas financeiras e sentimentais da vida. Com uma abordagem integrativa, nosso método combina técnicas de terapia cognitivo-comportamental com estratégias de coaching financeiro, ajudando os clientes a identificar e modificar padrões de pensamento que afetam suas decisões financeiras e relacionamentos pessoais. Além disso, exploramos crenças limitantes e traumas que possam estar interferindo no bem-estar emocional e financeiro, promovendo uma transformação profunda e sustentável para alcançar equilíbrio e prosperidade em ambos os aspectos da vida.
-          </div>
+          Descubra o poder da combinação perfeita entre amor-próprio e tecnologia! Ao participar das Oficinas de EmocionalizAÇÃO do Amor Próprio, você GANHA acesso a um webinar sobre chatbots de IA! Aumente sua produtividade e melhore sua saúde mental com a ajuda da inteligência artificial.
+           </div>
           <div className="buttons-group3">
             <div className="button3">
               <img
@@ -703,13 +700,9 @@ const handleSignIn = () => {
                 src="/icon--jamicons--outline--logos--plus.svg"
               />
               <div className="text-container11">
-                <div className="menu-item1">Saber mais</div>
+                <div className="menu-item1"></div>
               </div>
-              <img
-                className="icon-jam-icons-outline-l60"
-                alt=""
-                src="/icon--jamicons--outline--logos--arrowright.svg"
-              />
+              
               <div className="badge5">
                 <div className="button-text">9</div>
               </div>
@@ -3603,6 +3596,7 @@ const handleSignIn = () => {
         <div className="disclaimer">
           <div className="companyname-202x">Disclaimer</div>
         </div>
+        <InscricaoModal isOpen={isModalOpen} onClose={closeModal} />
       </div>
     </div>
   );

@@ -221,12 +221,12 @@
 .main-headline,
 .secondary-headline {
   position: relative;
-  line-height: 110%;
+  line-height: 100%;
   font-weight: 800;
 }
 .main-headline {
   align-self: stretch;
-  font-size: 72px;
+  font-size: 54px;
 }
 .secondary-headline {
   width: 708px;
