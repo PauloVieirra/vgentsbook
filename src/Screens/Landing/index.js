@@ -25,7 +25,7 @@ const handleSignIn = () => {
         <b className="magnifico">
           <img 
            style={{width:'52px'}}
-           src="/logomarilia.png"
+           src="/logom.jpg"
           
           />
         </b>
