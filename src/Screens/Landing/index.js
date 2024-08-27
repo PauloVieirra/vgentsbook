@@ -395,7 +395,7 @@ const handleSignIn = () => {
                 />
               </div>
               <div className="address-bar">
-                <div className="button-text">app.magnifi.co</div>
+                <div className="button-text"></div>
               </div>
             </div>
             <div className="video">
@@ -1102,7 +1102,7 @@ const handleSignIn = () => {
               <div className="top">
                 <b className="caption">Caption</b>
                 <div className="main-headline1">Headline One</div>
-                <div className="secondary-headline1">Otmizando seu tempo</div>
+                <div className="secondary-headline1">Otimizando seu tempo</div>
               </div>
               <div className="paragraph4">
               Otimize seu tempo e transforme sua rotina! Ao gerenciar melhor suas horas, você libera espaço para o que realmente importa. Foque no essencial, elimine distrações e veja como pequenas mudanças podem gerar grandes resultados. O tempo é seu recurso mais valioso—use-o com sabedoria para viver com mais propósito e produtividade.
@@ -1299,7 +1299,7 @@ const handleSignIn = () => {
                   />
                 </div>
                 <div className="address-bar">
-                  <div className="button-text">app.magnifi.co</div>
+                  <div className="button-text"></div>
                 </div>
               </div>
               <div className="video1">
