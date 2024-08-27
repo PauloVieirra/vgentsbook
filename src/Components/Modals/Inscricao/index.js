@@ -3,19 +3,23 @@ import './style.css';
 import supabase from '../../../servers/SupabaseConect';
 
 const InscricaoModal = ({ isOpen, onClose }) => {
-  const [step, setStep] = useState(1); // Controla a etapa atual
-  const [showSnackbar, setShowSnackbar] = useState(false); // Controla a exibição do snackbar
-  const [showQRCode, setShowQRCode] = useState(false); // Controla a exibição do QR Code
+  const [step, setStep] = useState(1);
+  const [showSnackbar, setShowSnackbar] = useState(false);
+  const [showQRCode, setShowQRCode] = useState(false);
 
   const handleNext = () => setStep(step + 1);
   const handlePrevious = () => setStep(step - 1);
 
+  const handleRedirectToWhatsApp = () => {
+    window.open("https://wa.me/message/JP2BLCNQOF2HM1", "_blank");
+  };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
-    
+
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData);
-  
+
     const { error } = await supabase
       .from('inscritos')
       .insert([
@@ -24,23 +28,28 @@ const InscricaoModal = ({ isOpen, onClose }) => {
           email: data.email, 
           cpf: data.cpf, 
           whatsapp: data.whatsapp, 
-          comoouviu: data.comoouviu, // Campo adicional
-          sugestoes: data.sugestoes,  // Campo adicional
+          comoouviu: data.comoouviu, 
+          sugestoes: data.sugestoes,  
           pagamento: data.pagamento === 'false' 
         }
       ]);
-  
+
     if (error) {
       console.error('Erro ao enviar inscrição:', error);
     } else {
       console.log('Inscrição enviada com sucesso');
-      setShowSnackbar(true); // Exibe o snackbar ao enviar com sucesso
-      setTimeout(() => setShowSnackbar(false), 3000); // Oculta o snackbar após 3 segundos
+      setShowSnackbar(true);
+
+      // Após 2 segundos, esconde o snackbar e redireciona para o WhatsApp
+      setTimeout(() => {
+        setShowSnackbar(false);
+        handleRedirectToWhatsApp(); // Redireciona para o WhatsApp após 2 segundos
+      }, 2000);
     }
   };
 
-  const handleWhatsAppClick = () => setShowQRCode(true); // Exibe o QR Code ao clicar no ícone do WhatsApp
-  const handleQRCodeClose = () => setShowQRCode(false); // Fecha o QR Code ao clicar no "X"
+  const handleWhatsAppClick = () => setShowQRCode(true);
+  const handleQRCodeClose = () => setShowQRCode(false);
 
   if (!isOpen) return null;
 
@@ -114,6 +123,7 @@ const InscricaoModal = ({ isOpen, onClose }) => {
             <button onClick={handleNext} className="next-button">Próximo</button>
           </div>
         )}
+
         {step === 3 && (
           <div className='continscricao'>
             <h2>Formulário de Inscrição</h2>
@@ -154,25 +164,18 @@ const InscricaoModal = ({ isOpen, onClose }) => {
                 <label style={{fontSize:"14px", marginLeft:"20px"}}>Entendo que precisarei pagar no máximo 2 dias antes de cada oficina.</label>
               </div>
               <div className='whatsbarr' onClick={handleWhatsAppClick}>
-                <img src='/whatsaap.png' className='whats' alt="WhatsApp" />
-                Clique aqui para atendimento direto
+               
               </div>
               <div className='cont-bottom'>
                 <button onClick={handlePrevious} className="previous-button">Anterior</button>
-                <button type="submit" className="submit-button">Enviar</button>
+                <button type="submit" className="submit-button">Enviar e ir para pagamento</button>
               </div>
             </form>
           </div>
         )}
-        {showSnackbar && <div className="snackbar">Inscrição enviada com sucesso!</div>} {/* Snackbar */}
-      </div>
 
-      {showQRCode && (
-        <div className='qrcodecont'>
-          <img src='/maqr.jpg' className='qrcode' alt="QR Code" />
-          <div onClick={handleQRCodeClose} className="close-qrcode">X</div>
-        </div>
-      )}
+        {showSnackbar && <div className="snackbar">Inscrição enviada com sucesso!</div>}
+      </div>
     </div>
   );
 };
