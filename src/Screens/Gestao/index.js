@@ -4,12 +4,13 @@ import './style.css';
 
 const Controle = () => {
     const [inscritos, setInscritos] = useState([]);
+    const [eventoSelecionado, setEventoSelecionado] = useState('inscritos'); // Estado para o evento selecionado
 
     useEffect(() => {
         // Função para buscar inscritos do banco de dados
         const fetchInscritos = async () => {
             const { data, error } = await supabase
-                .from('inscritos')
+                .from(eventoSelecionado)  // Busca de acordo com o evento selecionado
                 .select('*');
 
             if (error) {
@@ -20,12 +21,12 @@ const Controle = () => {
         };
 
         fetchInscritos();
-    }, []);
+    }, [eventoSelecionado]); // Reexecuta a busca quando o evento selecionado muda
 
     // Função para alternar o status de pagamento
     const togglePagamento = async (id, currentStatus) => {
         const { error } = await supabase
-            .from('inscritos')
+            .from(eventoSelecionado)  // Atualiza de acordo com o evento selecionado
             .update({ pagamento: !currentStatus })
             .eq('id', id);
 
@@ -39,8 +40,22 @@ const Controle = () => {
     };
 
     return (
-        <div className="table-container">
+        <div className="container">
             <h1>Controle de Inscritos</h1>
+
+           
+            <div>
+                <label htmlFor="eventoSelect">Selecione o Evento:</label>
+                <select 
+                    id="eventoSelect" 
+                    value={eventoSelecionado} 
+                    onChange={(e) => setEventoSelecionado(e.target.value)}
+                >
+                    <option value="inscritos">Evento Principal</option>
+                    <option value="inscritos_workshop">Workshop</option>
+                </select>
+            </div>
+
             <table>
                 <thead>
                     <tr>
@@ -71,7 +86,6 @@ const Controle = () => {
             </table>
         </div>
     );
-    
 }
 
 export default Controle;
