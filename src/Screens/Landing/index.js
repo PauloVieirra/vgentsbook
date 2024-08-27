@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import { useNavigate } from "react-router-dom";
 import InscricaoModal from "../../Components/Modals/Inscricao";
+import Workshop from "../../Components/Modals/workshop";
 import "./style.css";
 
 
@@ -8,9 +9,14 @@ import "./style.css";
 const LandingPage = () => {
 
   const [isModalOpen, setModalOpen] = useState(false);
+  const [isWorkshopOpen, setWorkshopOpen] = useState(false);
 
   const openModal = () => setModalOpen(true);
   const closeModal = () => setModalOpen(false);
+
+   // Funções para abrir e fechar o modal de workshop
+   const openWorkshop = () => setWorkshopOpen(true);
+   const closeWorkshop = () => setWorkshopOpen(false);
 
 const navigate = useNavigate();
 
@@ -1322,12 +1328,15 @@ const handleSignIn = () => {
               <b className="caption3">Caption</b>
               <div className="main-headline3">Headline One</div>
               <div className="secondary-headline3">
-              Workshop
-              Habilidades com IA: Equilibre sua Vida e Aumente a sua Produtividade com Chatbots de IA.
+              Revitalize Sua Saúde Mental com IA.
               </div>
             </div>
             <div className="paragraph3">
-            Convidamos você a participar das nossas oficinas de treinamento, uma oportunidade única para adquirir novas habilidades, expandir seus conhecimentos e se conectar com pessoas que compartilham dos mesmos interesses. Nossas oficinas são projetadas para oferecer experiências práticas e envolventes, garantindo que você saia mais preparado para enfrentar desafios e alcançar seus objetivos. Não perca essa chance de investir em seu crescimento pessoal e profissional!
+            Você sabia que a Inteligência Artificial pode ser a chave para um bem-estar mental mais equilibrado? Nossa Masterclass revela como a tecnologia pode transformar sua vida e promover uma mente mais saudável e tranquila.
+             <p>O que você vai descobrir: Reduza o estresse: Use chatbots para otimizar sua rotina e diminuir a carga mental</p>
+             <p>Liberte sua criatividade: Explore como a IA pode transformar seus hobbies em atividades terapêuticas</p>
+             <p>Aprenda com propósito: Domine novos idiomas e habilidades que estimulam seu crescimento pessoal e mental </p>
+             <p>Transforme seu dia a dia e alcance um novo nível de bem-estar mental com a ajuda da IA. Inscreva-se e dê o primeiro passo para um equilíbrio perfeito entre tecnologia e saúde mental! </p>
             </div>
             <div className="buttons-group8">
               <div className="button8">
@@ -1337,7 +1346,7 @@ const handleSignIn = () => {
                   src="/icon--jamicons--outline--logos--plus1.svg"
                 />
                 <div className="text-container29">
-                  <b className="button-text26">Inscreva-se</b>
+                  <b className="button-text26" onClick={openWorkshop}>Inscreva-se</b>
                 </div>
                 <img
                   className="icon-jam-icons-outline-l2"
@@ -3598,6 +3607,7 @@ const handleSignIn = () => {
           <div className="companyname-202x">Disclaimer</div>
         </div>
         <InscricaoModal isOpen={isModalOpen} onClose={closeModal} />
+        <Workshop isOpen={isWorkshopOpen} onClose={closeWorkshop} />
       </div>
     </div>
   );
