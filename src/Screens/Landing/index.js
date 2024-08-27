@@ -266,8 +266,8 @@ const handleSignIn = () => {
           <div className="section-text">
             <div className="top">
               <b className="caption">Caption</b>
-              <div className="main-headline">Workshop
-              Habilidades com IA: Equilibre sua Vida e Aumente a sua Produtividade com Chatbots de IA.</div>
+              <div className="main-headline"> Participe das nossas oficinas.
+               </div>
               <div className="secondary-headline">Headline Two</div>
             </div>
             <div className="paragraph">{`Participar das Oficinas de EmocionalizAÇÃO do Amor Próprio é uma grande oportunidade para você dar uma virada de chave na sua vida, contando com o apoio de outras pessoas, com o mesmo propósito que você e uma profissional altamente qualificada!`}</div>
@@ -1322,7 +1322,8 @@ const handleSignIn = () => {
               <b className="caption3">Caption</b>
               <div className="main-headline3">Headline One</div>
               <div className="secondary-headline3">
-                Participe das nossas oficinas.
+              Workshop
+              Habilidades com IA: Equilibre sua Vida e Aumente a sua Produtividade com Chatbots de IA.
               </div>
             </div>
             <div className="paragraph3">

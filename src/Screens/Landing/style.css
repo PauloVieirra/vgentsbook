@@ -1063,17 +1063,37 @@
   gap: 24px;
 }
 .container3 {
+  position: relative; /* Para posicionar a pseudo-classe corretamente */
   align-self: stretch;
   border-radius: 30px;
   flex-direction: row;
   align-items: center;
   padding: 80px;
   gap: 80px;
-  background-image: url(/public/container@3x.png);
+  background-image: url(/public/rodas.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: center;
+  overflow: hidden; /* Garante que o conteúdo não transborde os cantos arredondados */
 }
+
+.container3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(53, 8, 112, 0.7); /* Ajuste a cor e a opacidade conforme necessário */
+  border-radius: inherit; /* Garante que o filtro siga o formato da borda */
+  z-index: 1; /* Garante que o filtro fique acima do fundo, mas abaixo do conteúdo */
+}
+
+.container3 > * {
+  position: relative;
+  z-index: 2; /* Garante que o conteúdo esteja acima do filtro */
+}
+
 .decorationicons2,
 .section3 {
   display: flex;
