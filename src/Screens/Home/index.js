@@ -20,19 +20,6 @@ const ReaderView = () => {
 
     return (
         <div className="reader-view-container">
-            <div className="menu">
-                <div className='contmenuleft'>
-                    <button onClick={handleLogout} className="btn-logout">Sair</button>
-                </div>
-               <div className='contmenurigth'>
-                  {user?.email === "mariliateixeirapsi@vgents.com" && (
-                        <button onClick={handleNavigateToSignUp} className="btn-signup">Cadastro</button>
-                    )}
-               </div>
-                
-               
-            </div>
-
             <MyPdfViewer fileUrl={pdfUrl} />
         </div>
     );

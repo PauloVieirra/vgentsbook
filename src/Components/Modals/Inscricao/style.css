@@ -31,7 +31,7 @@
     flex-direction: column;
     background-color: #fff;
     border-radius: 8px;
-    width: auto;
+    width: 50%;
     
     min-width: 600px;
     position: relative;
@@ -89,7 +89,9 @@
   }
   .form-text{
     display: flex;
+    height: 60px;
     flex-direction: row;
+    align-items: center;
   }
   .form-text input{
     width: 28px;
@@ -115,5 +117,14 @@
   }
   .previous-button{
     background-color: #87a1f8;
+  }
+  .programacao-item{
+    padding-top: 20px;
+    padding-bottom: 10px;
+  }
+  .continfos{
+     display: flex;
+     flex-direction: column;
+     max-width: 100%;
   }
   
