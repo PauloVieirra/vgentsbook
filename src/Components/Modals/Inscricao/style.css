@@ -127,4 +127,22 @@
      flex-direction: column;
      max-width: 100%;
   }
-  
+  .qrcodecont{
+    display: flex;
+    position: absolute;
+    z-index: 1000;
+    top: 20%;
+  }
+  .qrcode{
+    width: 300px;
+  }
+  .whats{
+    width: 40px;
+  }
+  .whatsbarr{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+  }

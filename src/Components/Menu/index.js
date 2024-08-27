@@ -31,7 +31,7 @@ const LoggedInMenu = () => {
        <div className="btnmenu" onClick={handleInicio}>Inicio</div>
       <div className="btnmenu">Notificações</div>
       <div className="btnmenu">Mensagens</div>
-      {user && user.email === "vieirajjr@vgents.com" || user && user.email === "mariliateixeirapsi@vgents.com" &&
+      {user && user.email === "mariliateixeirapsi@vgents.com" &&
       <div className="btnmenu" onClick={handleGestao}>
          Gestão
       </div>
