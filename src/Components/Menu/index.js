@@ -28,9 +28,6 @@ const LoggedInMenu = () => {
        <p className="email">{user?.email}</p>
       </div>
        <div className='contnav'> 
-       <div className="btnmenu" onClick={handleInicio}>Inicio</div>
-      <div className="btnmenu">Notificações</div>
-      <div className="btnmenu">Mensagens</div>
       {user && user.email === "mariliateixeirapsi@vgents.com" &&
       <div className="btnmenu" onClick={handleGestao}>
          Gestão

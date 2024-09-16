@@ -12,8 +12,11 @@ function AppRoutes  () {
   const {user} = useAuth();
   
   return (
-    <div>
-      <LoggedInMenu/>
+    <div style={{display:'flex',justifyContent:"center", flexDirection:'column'}}>
+      <div style={{width:'100%', backgroundColor:"#dedede"}}>
+          <LoggedInMenu/> 
+      </div>
+   
       <Routes>
         <Route path="/" element={<ReaderView/>} />
         <Route path="/SignUp" element={<SignUp/>} />

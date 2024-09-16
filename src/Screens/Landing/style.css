@@ -1535,6 +1535,13 @@
 
 @media (max-width: 576px) {
 
+  .menu-item1 {
+    position: relative;
+    letter-spacing: 0.5px;
+    line-height: 24px;
+    font-weight: 500;
+  }
+
   .landing-page-5{
     display: flex;
     width: 100vw;
@@ -1686,7 +1693,7 @@
   align-items: center;
 }
 .button1 {
-  width: 90%;
+  width: 80%;
   border-radius: 8px;
   background-color: #2563eb;
   border: 2px solid #2563eb;
