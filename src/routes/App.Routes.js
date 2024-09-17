@@ -13,7 +13,7 @@ function AppRoutes  () {
   
   return (
     <div style={{display:'flex',justifyContent:"center", flexDirection:'column'}}>
-      <div style={{width:'100%', backgroundColor:"#dedede"}}>
+      <div style={{display:'flex',width:'100%', backgroundColor:"#f5f5f5", justifyContent:'center', alignItems:'center'}}>
           <LoggedInMenu/> 
       </div>
    

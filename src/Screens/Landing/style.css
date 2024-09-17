@@ -1686,6 +1686,14 @@
   line-height: 160%;
   color: #475569;
 }
+.paragraphend{
+  display: flex;
+  width: 100%;
+  position: relative;
+  font-size: 18px;
+  line-height: 160%;
+  color: #475569;
+}
 .buttons-group2 {
   display: flex;
   flex-direction: row;
@@ -1725,11 +1733,11 @@
   overflow: hidden; /* Garante que o conteúdo não transborde os cantos arredondados */
 }
 
-.paragraph3 {
-  display: flex;
-  width: 90%;
-  height: auto;
-  font-size: 18px;
+.paragraph3,
+.secondary-headline3 {
+  align-self: stretch;
+  position: relative;
+  color: #fff;
 }
 .container3::before {
   display: flex;
